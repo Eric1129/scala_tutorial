@@ -1,5 +1,7 @@
 package chapter02
 
+import chapter01.Student
+
 object Test07_Datatype {
 
     def main(args: Array[String]): Unit = {
@@ -49,6 +51,27 @@ object Test07_Datatype {
         val isTrue: Boolean = true;
         println(isTrue)
 
+        // 5. 空类型
+        // 5.1 空值 Unit
+        def m1():Unit = {
+            println("m1被调用执行")
+        }
+
+        val a = m1();
+        println(a)
+
+        // 5.2 空引用
+        var student: Student = new Student("alice", 20)
+        student = null
+        println(student)
+
+        // 5.3 Nothing
+        def m2(n: Int): Nothing = {
+            throw new NullPointerException
+        }
+
+        val b = m2(0);
+        println(b)
     }
 
 
